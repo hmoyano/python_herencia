@@ -1,14 +1,16 @@
 # Autor: Hector y Esther
 # version: 0.0.1
-# data: 15/03/2022
+# data: 23/03/2022
 
-class Serie():
+from python_herencia.reto2.Entregable import Entregable
+
+class Serie(Entregable):
 
     # atributos
 
     __titulo: str
     __numtemp = 3
-    entregado = 'false'
+    entregado = False
     __genero: str
     __creador: str
 
@@ -19,7 +21,7 @@ class Serie():
     #
     # def __init__(self, newTit, newCreador):
     #     self.__titulo = newTit
-    #     self.creador = newCreador
+    #     self.__creador = newCreador
 
     def __init__(self, newTit, newNumTemp, newGen, newCreador):
         self.__titulo = newTit
@@ -36,10 +38,6 @@ class Serie():
     def titulo(self):
         return self.__titulo
 
-    @titulo.setter
-    def set_titulo(self, newtitulo):
-        self.__titulo = newtitulo
-
     @property
     def numtemp(self):
         return self.__numtemp
@@ -54,18 +52,20 @@ class Serie():
 
     # sets
 
-
+    @titulo.setter
+    def titulo(self, newtitulo):
+        self.__titulo = newtitulo
 
     @numtemp.setter
-    def set_numtemp(self, numtemp):
+    def numtemp(self, numtemp):
         self.__numtemp = numtemp
 
     @genero.setter
-    def set_genero(self, genero):
+    def genero(self, genero):
         self.__genero = genero
 
     @creador.setter
-    def set_creador(self, creador):
+    def creador(self, creador):
         self.__creador = creador
 
 
@@ -73,4 +73,6 @@ class Serie():
     # str
 
     def __str__(self):
-        return (f'[{self.__titulo}, {self.__numtemp}, {self.__genero}, {self.__creador}]')
+        return (f'[{self.__titulo}, {self.__numtemp}, {self.__genero}, {self.__creador}, {self.entregado}]')
+
+    # metodos propios
